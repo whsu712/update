@@ -40,10 +40,10 @@ contract BaseLuckyNumber {
         uint256 payout = 0;
 
         if (_number == luckyNumber) {
-            payout = 0.008 ether;           // 8x 大奖
+            payout = 0.008 ether;           // 8x big lotter
             payable(msg.sender).transfer(payout);
         } else {
-            treasuryBalance += msg.value;   // 未中奖进入金库
+            treasuryBalance += msg.value;   // false
         }
 
         emit NumberGuessed(msg.sender, _number, luckyNumber, msg.value, payout, block.timestamp);
